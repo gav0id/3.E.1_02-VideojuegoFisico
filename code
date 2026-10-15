@@ -1,1 +1,58 @@
+public class ProductoGeek {
+    protected String codigo;
+    protected String nombre;
+    protected double precioBase;
 
+    public ProductoGeek(String codigo, String nombre, double precioBase) {
+        this.codigo = codigo;
+        this.nombre = nombre;
+        this.precioBase = precioBase;
+        System.out.println("Ejecutando constructor de ProductoGeek");
+    }
+
+    public String getCodigo() {
+        return this.codigo;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+
+    public String getNombre() {
+        return this.nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public double getPrecioBase() {
+        return this.precioBase;
+    }
+
+    public void setPrecioBase(double precioBase) {
+        this.precioBase = precioBase;
+    }
+}
+
+// ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+public class VideojuegoFisico extends ProductoGeek{
+    private String plataforma;
+    private double pesoGramos;
+
+    public VideojuegoFisico(String codigo, String nombre, double precioBase, String plataforma, double pesoGramos) {
+        super(codigo, nombre, precioBase);
+        this.plataforma = plataforma;
+        this.pesoGramos = pesoGramos;
+        System.out.println("Ejecutando constructor de VideojuegoFisico");
+    }
+}
+
+// ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+public class Main {
+    public static void main(String[] args){
+        VideojuegoFisico videojuego = new VideojuegoFisico("67", "Fatal Frame Maiden Of Black Water", 146999.0,"Nintendo Switch", 60.0 );
+    }
+}
